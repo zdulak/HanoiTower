@@ -1,5 +1,7 @@
 package hanoitower.presentation
 
-object Controller {
+import hanoitower.core.traits.Controller
 
+object Controller extends Controller {
+  override def getMove: (Int, Int) = ???
 }
