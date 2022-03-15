@@ -23,6 +23,7 @@ object View extends View {
       }
       println()
     }
+    println()
   }
 
   private def pegLevelToString(maxDiskSize: Int, diskSize: Int, diskChar: Char, separator: Char): String =
