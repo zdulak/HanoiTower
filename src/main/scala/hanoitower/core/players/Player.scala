@@ -1,5 +1,7 @@
 package hanoitower.core.players
 
-class Player {
+import hanoitower.core.boards.Board
 
+abstract class Player {
+  def getMove(board: Board): (Int, Int)
 }

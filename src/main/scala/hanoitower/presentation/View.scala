@@ -32,4 +32,6 @@ object View extends View {
         (diskChar.toString * diskSize) ++= " " * (maxDiskSize - diskSize)
       sb.toString
     }
+
+  override def printMsg(msg: String): Unit = println(msg)
 }

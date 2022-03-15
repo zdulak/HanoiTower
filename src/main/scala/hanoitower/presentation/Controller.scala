@@ -21,7 +21,7 @@ object Controller extends Controller {
     if (input == "exit") exit()
     if (input.length == 2 && input.forall(translationTable.contains)) {
       val (start, end) = (translationTable(input(0)), translationTable(input(1)))
-      if (board.IsValidMove(start, end))
+      if (board.isValidMove(start, end))
         (start, end)
       else {
         println("Invalid coordinates")

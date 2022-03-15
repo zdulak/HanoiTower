@@ -18,9 +18,13 @@ class Board(val diskAmount: Int, pegs: List[List[Int]]){
     })
   }
 
-  def IsValidMove(start: Int, end: Int): Boolean = apply(start) < apply(end)
+  def isValidMove(start: Int, end: Int): Boolean = {
+    if (_pegs(start).isEmpty) false
+    else if (_pegs(end).isEmpty) true
+    else apply(start) < apply(end)
+  }
 
-  def IsFinished: Boolean = _pegs.last == (1 to diskAmount).toList
+  def isFinished: Boolean = _pegs.last == (1 to diskAmount).toList
 
   def size(pegNumber: Int): Int = _pegs(pegNumber).size
 }
