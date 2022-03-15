@@ -1,6 +1,9 @@
 package hanoitower.core.traits
 
+import hanoitower.core.boards.Board
+
 trait Controller {
-  def getMove: (Int, Int)
+  def exit(): Nothing
+  def getMove(board: Board): (Int, Int)
 
 }
