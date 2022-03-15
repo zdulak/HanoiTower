@@ -1,9 +1,7 @@
-package hanoitower.core.traits
+package hanoitower.core.players
 
 import hanoitower.core.boards.Board
 
-trait Controller {
-  def exit(): Nothing
+abstract class Player {
   def getMove(board: Board): (Int, Int)
-
 }
