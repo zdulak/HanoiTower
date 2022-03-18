@@ -59,4 +59,6 @@ object View extends View {
     println("2. Computer player")
     println("3. Return to main menu")
   }
+
+  override def printDisksAmountMenu(): Unit = println("Please enter the number of disks between 1 and 10")
 }

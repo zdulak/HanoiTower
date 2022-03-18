@@ -7,5 +7,6 @@ trait View {
   def printMainMenu(): Unit
   def printAbout(): Unit
   def printNewGameMenu(): Unit
+  def printDisksAmountMenu(): Unit
 
 }
