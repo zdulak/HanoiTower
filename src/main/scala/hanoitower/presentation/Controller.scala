@@ -35,7 +35,7 @@ object Controller extends Controller {
   }
 
   @tailrec
-  def getMenuChoice(lowerBound: Int, upperBound: Int, message: Unit => Unit): Int = {
+  def getMenuChoice(lowerBound: Int, upperBound: Int, message: () => Unit): Int = {
     message()
     println()
     val choice = readLine().toIntOption

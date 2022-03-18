@@ -1,8 +1,8 @@
 package hanoitower.core.games
 
 import hanoitower.core.boards.Board
-import hanoitower.core.players.Player
-import hanoitower.core.traits.View
+import hanoitower.core.players.{Computer, Player}
+import hanoitower.core.traits.{Controller, View}
 
 class Game(player: Player, view: View) {
   def run(board: Board): Unit = {
@@ -16,3 +16,4 @@ class Game(player: Player, view: View) {
 
   }
 }
+
