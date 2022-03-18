@@ -33,4 +33,17 @@ object Controller extends Controller {
       getMove(board)
     }
   }
+
+  @tailrec
+  def getMenuChoice(lowerBound: Int, upperBound: Int, message: () => Unit): Int = {
+    message()
+    val choice = readLine().toIntOption
+    choice match {
+      case Some(value) if (value >= lowerBound && value <= upperBound) => value - 1
+      case _ => {
+        println("Invalid input")
+        getMenuChoice(lowerBound, upperBound, message)
+      }
+    }
+  }
 }

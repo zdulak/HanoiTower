@@ -3,6 +3,8 @@ package hanoitower.presentation
 import hanoitower.core.boards.Board
 import hanoitower.core.traits.View
 
+import scala.util.Try
+
 object View extends View {
   override def printBoard(board: Board): Unit = {
     val offsets = (0 until 3).map(board.diskAmount - board.size(_))
@@ -35,4 +37,28 @@ object View extends View {
     }
 
   override def printMsg(msg: String): Unit = println(msg)
+
+  override def printMainMenu(): Unit = {
+    println("The tower of Hanoi")
+    println("Choose one options from the list below.\n")
+    println("1. New game")
+    println("2. About")
+    println("3. Exit")
+  }
+
+  override def printAbout(): Unit = {
+    println("This game was made by Damian Zdulski")
+    println("Press Enter key to return to the main menu")
+    Try {
+      System.in.read()
+    }
+  }
+  override def printNewGameMenu(): Unit = {
+    println("Choose one options from the list below.\n")
+    println("1. Human player")
+    println("2. Computer player")
+    println("3. Return to main menu")
+  }
+
+  override def printDisksAmountMenu(): Unit = println("Please enter the number of disks between 1 and 10")
 }
