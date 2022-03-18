@@ -3,13 +3,11 @@ package hanoitower.core.players
 import hanoitower.core.boards.Board
 import scala.collection.mutable
 
-class Computer(diskAmount: Int) extends  Player {
-  private val _moves = {
-    val moves = new mutable.Queue[(Int, Int)]()
-    generateMoves(diskAmount, 0, 1, 2, moves)
-    moves
-  }
+class Computer extends  Player {
+  private val _moves = new mutable.Queue[(Int, Int)]()
+
   override def getMove(board: Board): (Int, Int) = {
+    if (_moves.isEmpty) generateMoves(board.diskAmount, 0, 1, 2, _moves)
     Thread.sleep(200)
     _moves.dequeue()
   }
